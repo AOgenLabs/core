@@ -4,8 +4,8 @@ This guide explains how to deploy the AO Process Builder to the AO platform.
 
 ## Prerequisites
 
-- AOS installed on your system
-- Basic understanding of AO and Lua
+-   AOS installed on your system
+-   Basic understanding of AO and Lua
 
 ## Deployment Options
 
@@ -22,6 +22,7 @@ chmod +x deploy.sh
 ```
 
 This script will:
+
 1. Start AOS
 2. Deploy the Utils module
 3. Deploy the AutomationTemplate module
@@ -35,28 +36,29 @@ This script will:
 If you prefer to deploy manually, follow these steps:
 
 1. Start AOS:
-   ```bash
-   aos
-   ```
+
+    ```bash
+    aos
+    ```
 
 2. In the AOS console, load the modules and processes in the following order:
 
-   ```
-   # Load the Utils module
-   .load backend/core/Utils.lua
+    ```
+    # Load the Utils module
+    .load core/core/Utils.lua
 
-   # Load the AutomationTemplate module
-   .load backend/core/AutomationTemplate.lua
+    # Load the AutomationTemplate module
+    .load core/core/AutomationTemplate.lua
 
-   # Load the AdvancedTemplate module
-   .load backend/core/AdvancedTemplate.lua
+    # Load the AdvancedTemplate module
+    .load core/core/AdvancedTemplate.lua
 
-   # Load the ProcessBuilder
-   .load backend/core/ProcessBuilder.lua
+    # Load the ProcessBuilder
+    .load core/core/ProcessBuilder.lua
 
-   # Load the EmailBot
-   .load backend/bots/EmailBot.lua
-   ```
+    # Load the EmailBot
+    .load core/bots/EmailBot.lua
+    ```
 
 3. Save the process IDs displayed in the console. You'll need these to interact with the system.
 
@@ -65,7 +67,7 @@ If you prefer to deploy manually, follow these steps:
 To test if the deployment was successful, you can run the simple test script:
 
 ```
-.load backend/tests/SimpleTest.lua
+.load core/tests/SimpleTest.lua
 ```
 
 This will create a test automation and trigger it to verify that everything is working correctly.
